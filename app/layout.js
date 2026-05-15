@@ -4,7 +4,6 @@ import Script from "next/script";
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
   description: "Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.",
-  metadataBase: new URL('https://www.awscosellnewsletter.com'),
 };
 
 export default function RootLayout({ children }) {
@@ -32,24 +31,14 @@ export default function RootLayout({ children }) {
             </a>
           </div>
 
-          {/* THE FORM CONTAINER */}
-          <div className="mt-12 max-w-md mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl p-8 min-h-[200px]">
+          {/* BEEHIIV SECTION */}
+          <div className="mt-12 max-w-md mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl p-8">
             <div 
               className="beehiiv-embed" 
               data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
             >
-              {/* The form will be injected here */}
+              {/* Form loads here */}
             </div>
-            
-            {/* This Script tag handles the "Invisibility" problem */}
-            <Script
-              src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-              strategy="lazyOnload"
-              onLoad={() => {
-                console.log("Beehiiv script loaded successfully");
-              }}
-            />
-
             <p className="text-[10px] text-slate-400 mt-6 uppercase tracking-[0.2em] font-bold">
               Insights to your inbox every two weeks
             </p>
@@ -65,6 +54,12 @@ export default function RootLayout({ children }) {
             &copy; 2026 AWS GTM Strategy. All rights reserved.
           </p>
         </footer>
+
+        {/* This script is placed at the bottom, just before the body closes */}
+        <Script 
+          src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
