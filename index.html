@@ -12,14 +12,14 @@
         .prose th, .prose td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
         .prose th { background-color: #f8fafc; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .hidden-issue { display: none; }
+        .hidden-issue { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans leading-normal">
 
     <header class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
         <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">AWS GTM Strategy</h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-light leading-relaxed text-center">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
         </p>
         <div class="flex justify-center items-center space-x-4">
@@ -27,22 +27,20 @@
                 Connect on LinkedIn
             </a>
             <span class="text-slate-300">|</span>
-            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest text-center">By Harry Blakemore</span>
+            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest">By Harry Blakemore</span>
         </div>
     </header>
 
     <section class="max-w-6xl mx-auto px-6 mb-24">
         <h2 class="text-sm uppercase tracking-[0.2em] text-slate-400 font-bold mb-8">Latest Insights</h2>
-        <div id="featured-grid" class="grid md:grid-cols-3 gap-8">
-            </div>
+        <div id="featured-grid" class="grid md:grid-cols-3 gap-8"></div>
     </section>
 
-    <section class="max-w-3xl mx-auto px-6 pb-24">
-        <h2 class="text-sm uppercase tracking-[0.2em] text-slate-400 font-bold mb-10 text-center text-center">Full Archive</h2>
-        <div id="archive-list" class="divide-y divide-slate-200">
-            </div>
+    <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+        <h2 class="text-sm uppercase tracking-[0.2em] text-slate-400 font-bold mb-10">Full Archive</h2>
+        <div id="archive-list" class="divide-y divide-slate-200 text-left"></div>
         
-        <div id="see-more-container" class="mt-12 text-center">
+        <div id="see-more-container" class="mt-12">
             <button onclick="showAllIssues()" class="bg-white border border-slate-200 text-slate-600 px-8 py-3 rounded-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition shadow-sm">
                 See More Editions
             </button>
@@ -53,44 +51,48 @@
         <div class="min-h-screen px-4 py-12 flex items-center justify-center">
             <div class="bg-white w-full max-w-4xl rounded-3xl shadow-2xl relative p-8 md:p-16">
                 <button onclick="closeReader()" class="fixed top-8 right-8 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-xl border border-slate-100 hover:scale-110 transition z-50 text-2xl font-bold">×</button>
-                <div id="newsletter-content" class="prose prose-slate lg:prose-xl max-w-none">
-                    </div>
+                <div id="newsletter-content" class="prose prose-slate lg:prose-xl max-w-none"></div>
             </div>
         </div>
     </div>
 
     <script>
-        // ADD YOUR ISSUES HERE
-        // The first 3 go to Widgets. The next 5 are visible in list. Rest are hidden until "See More" is clicked.
+        // FULL LIST OF ALL EDITIONS
+        // Edit the titles and previews below to match your actual newsletters.
         const issues = [
-            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The 2026 Response Gap is widening. Buyers now expect a sub-10 second response, yet human averages are stalling at 47 hours...' },
-            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'Partnership in the AWS ecosystem is no longer about who you know, but how your data integrates with their discovery engines...' },
-            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Listing on the Marketplace is not a strategy. It is a prerequisite. Here is how to drive actual traffic to your listing...' },
+            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The 2026 Response Gap is widening. Buyers now expect a sub-10 second response...' },
+            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'Partnership in the AWS ecosystem is no longer about who you know...' },
+            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Listing on the Marketplace is not a strategy. It is a prerequisite...' },
             { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026', preview: 'When your sales team says one thing and your Marketplace listing says another...' },
             { id: 'issue-20', title: 'Marketplace Maturity', date: 'March 20, 2026', preview: 'A deep dive into how enterprise buyers have shifted their procurement habits...' },
             { id: 'issue-19', title: 'The Ecosystem Flywheel', date: 'March 6, 2026', preview: 'Generating momentum in a saturated cloud market requires a different kind of leverage...' },
             { id: 'issue-18', title: 'Data-Driven Co-selling', date: 'Feb 20, 2026', preview: 'How to use CRM data to align with AWS Account Managers effectively...' },
             { id: 'issue-17', title: 'The Future of ISVs', date: 'Feb 6, 2026', preview: 'Predicting the next major shift in how Independent Software Vendors build on Cloud...' },
-            { id: 'issue-16', title: 'Issue 16 Title', date: 'Jan 23, 2026', preview: 'Preview text for older issue...' },
-            { id: 'issue-15', title: 'Issue 15 Title', date: 'Jan 9, 2026', preview: 'Preview text for older issue...' },
-            // Add all the rest here...
+            { id: 'issue-16', title: 'Strategic Alliances 101', date: 'Jan 23, 2026', preview: 'Building the foundation for long-term cloud growth...' },
+            { id: 'issue-15', title: 'Marketplace Fundamentals', date: 'Jan 9, 2026', preview: 'The essential guide to your first listing...' },
+            { id: 'issue-14', title: 'Edition 14 Title', date: 'Dec 26, 2025', preview: 'Summary of edition 14...' },
+            { id: 'issue-13', title: 'Edition 13 Title', date: 'Dec 12, 2025', preview: 'Summary of edition 13...' },
+            { id: 'issue-12', title: 'Edition 12 Title', date: 'Nov 28, 2025', preview: 'Summary of edition 12...' },
+            { id: 'issue-11', title: 'Edition 11 Title', date: 'Nov 14, 2025', preview: 'Summary of edition 11...' },
+            { id: 'issue-10', title: 'Edition 10 Title', date: 'Oct 31, 2025', preview: 'Summary of edition 10...' },
+            { id: 'issue-09', title: 'Edition 09 Title', date: 'Oct 17, 2025', preview: 'Summary of edition 09...' },
+            { id: 'issue-08', title: 'Edition 08 Title', date: 'Oct 3, 2025', preview: 'Summary of edition 08...' },
+            { id: 'issue-07', title: 'Edition 07 Title', date: 'Sept 19, 2025', preview: 'Summary of edition 07...' },
+            { id: 'issue-06', title: 'Edition 06 Title', date: 'Sept 5, 2025', preview: 'Summary of edition 06...' },
+            { id: 'issue-05', title: 'Edition 05 Title', date: 'Aug 22, 2025', preview: 'Summary of edition 05...' },
+            { id: 'issue-04', title: 'Edition 04 Title', date: 'Aug 8, 2025', preview: 'Summary of edition 04...' },
+            { id: 'issue-03', title: 'Edition 03 Title', date: 'July 25, 2025', preview: 'Summary of edition 03...' },
+            { id: 'issue-02', title: 'Edition 02 Title', date: 'July 11, 2025', preview: 'Summary of edition 02...' },
+            { id: 'issue-01', title: 'Edition 01 Title', date: 'June 27, 2025', preview: 'Summary of edition 01...' }
         ];
 
         function init() {
             const featuredGrid = document.getElementById('featured-grid');
             const archiveList = document.getElementById('archive-list');
-            const seeMoreContainer = document.getElementById('see-more-container');
-            
             featuredGrid.innerHTML = '';
             archiveList.innerHTML = '';
 
-            // If there are 8 or fewer issues, we don't even need the See More button
-            if (issues.length <= 8) {
-                seeMoreContainer.style.display = 'none';
-            }
-
             issues.forEach((issue, index) => {
-                // 1. Render Top 3 Widgets
                 if (index < 3) {
                     featuredGrid.innerHTML += `
                         <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full group">
@@ -102,9 +104,6 @@
                     `;
                 }
                 
-                // 2. Render Archive List
-                // We show issues starting from index 3. 
-                // We hide anything after index 7 (the 8th total issue).
                 if (index >= 3) {
                     const isHidden = index > 7 ? 'hidden-issue' : '';
                     archiveList.innerHTML += `
@@ -121,8 +120,9 @@
         }
 
         function showAllIssues() {
-            const hiddenItems = document.querySelectorAll('.hidden-issue');
-            hiddenItems.forEach(item => item.style.display = 'flex');
+            document.querySelectorAll('.archive-item').forEach(item => {
+                item.classList.remove('hidden-issue');
+            });
             document.getElementById('see-more-container').style.display = 'none';
         }
 
