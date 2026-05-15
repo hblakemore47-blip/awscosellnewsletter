@@ -67,4 +67,88 @@
             { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'Partnership in the AWS ecosystem is no longer about who you know, but how your data integrates with their discovery engines...' },
             { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Listing on the Marketplace is not a strategy. It is a prerequisite. Here is how to drive actual traffic to your listing...' },
             { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026', preview: 'When your sales team says one thing and your Marketplace listing says another...' },
-            { id: '
+            { id: 'issue-20', title: 'Marketplace Maturity', date: 'March 20, 2026', preview: 'A deep dive into how enterprise buyers have shifted their procurement habits...' },
+            { id: 'issue-19', title: 'The Ecosystem Flywheel', date: 'March 6, 2026', preview: 'Generating momentum in a saturated cloud market requires a different kind of leverage...' },
+            { id: 'issue-18', title: 'Data-Driven Co-selling', date: 'Feb 20, 2026', preview: 'How to use CRM data to align with AWS Account Managers effectively...' },
+            { id: 'issue-17', title: 'The Future of ISVs', date: 'Feb 6, 2026', preview: 'Predicting the next major shift in how Independent Software Vendors build on Cloud...' },
+            { id: 'issue-16', title: 'Issue 16 Title', date: 'Jan 23, 2026', preview: 'Preview text for older issue...' },
+            { id: 'issue-15', title: 'Issue 15 Title', date: 'Jan 9, 2026', preview: 'Preview text for older issue...' },
+            // Add all the rest here...
+        ];
+
+        function init() {
+            const featuredGrid = document.getElementById('featured-grid');
+            const archiveList = document.getElementById('archive-list');
+            const seeMoreContainer = document.getElementById('see-more-container');
+            
+            featuredGrid.innerHTML = '';
+            archiveList.innerHTML = '';
+
+            // If there are 8 or fewer issues, we don't even need the See More button
+            if (issues.length <= 8) {
+                seeMoreContainer.style.display = 'none';
+            }
+
+            issues.forEach((issue, index) => {
+                // 1. Render Top 3 Widgets
+                if (index < 3) {
+                    featuredGrid.innerHTML += `
+                        <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full group">
+                            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">${issue.date}</span>
+                            <h3 class="text-2xl font-bold leading-tight text-slate-900 group-hover:text-blue-600 transition-colors">${issue.title}</h3>
+                            <p class="mt-4 text-slate-500 line-clamp-3 leading-relaxed flex-grow">${issue.preview}</p>
+                            <span class="mt-8 text-slate-900 font-bold text-sm flex items-center">Read Edition <span class="ml-2 group-hover:ml-4 transition-all">→</span></span>
+                        </div>
+                    `;
+                }
+                
+                // 2. Render Archive List
+                // We show issues starting from index 3. 
+                // We hide anything after index 7 (the 8th total issue).
+                if (index >= 3) {
+                    const isHidden = index > 7 ? 'hidden-issue' : '';
+                    archiveList.innerHTML += `
+                        <div onclick="readIssue('${issue.id}')" class="archive-item ${isHidden} group flex justify-between items-center py-6 hover:px-4 hover:bg-white hover:shadow-md rounded-xl cursor-pointer transition-all border-b border-slate-100 last:border-0">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">${issue.date}</span>
+                                <span class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">${issue.title}</span>
+                            </div>
+                            <span class="text-slate-300 group-hover:text-blue-600 transition-colors text-2xl">→</span>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function showAllIssues() {
+            const hiddenItems = document.querySelectorAll('.hidden-issue');
+            hiddenItems.forEach(item => item.style.display = 'flex');
+            document.getElementById('see-more-container').style.display = 'none';
+        }
+
+        async function readIssue(id) {
+            const modal = document.getElementById('reader-modal');
+            const contentDiv = document.getElementById('newsletter-content');
+            try {
+                const response = await fetch(`/content/files/${id}.md`);
+                if (!response.ok) throw new Error('Not found');
+                const text = await response.text();
+                const cleanText = text.replace(/^---[\s\S]*?---/, '');
+                contentDiv.innerHTML = marked.parse(cleanText);
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } catch (err) {
+                console.error(err);
+                alert("Edition could not be loaded.");
+            }
+        }
+
+        function closeReader() {
+            document.getElementById('reader-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        init();
+    </script>
+</body>
+</html>
