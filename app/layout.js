@@ -15,6 +15,8 @@ export default function RootLayout({ children }) {
             <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light">
                 Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
             </p>
+            
+            {/* Main Action Buttons */}
             <div className="flex flex-col md:flex-row justify-center items-center gap-4">
                 <a className="libutton shadow-lg" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7415160724940902400" target="_blank">
                     Subscribe on LinkedIn
@@ -23,6 +25,14 @@ export default function RootLayout({ children }) {
                     Connect with Harry
                 </a>
             </div>
+
+            {/* Third Centered Button (AtlasGTM Tool) */}
+            <div className="mt-6 flex justify-center">
+                <a href="https://aws.coss.atlasgtm.live/" target="_blank" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
+                    🚀 Check your Co-sell Readiness
+                </a>
+            </div>
+
             <p className="mt-8 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
         </header>
         {children}
