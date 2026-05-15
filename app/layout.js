@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
@@ -11,12 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900 font-sans">
-        {/* The Beehiiv Loader */}
-        <Script 
-          src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
-          strategy="afterInteractive" 
-        />
-
         <header className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
             <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">AWS GTM Strategy</h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light">
@@ -34,21 +27,25 @@ export default function RootLayout({ children }) {
 
             <div className="mt-6 flex justify-center">
                 <a href="https://aws.coss.atlasgtm.live/" target="_blank" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
-                    🚀 Check your Co-sell Readiness
+                    Check your Co-sell Readiness
                 </a>
             </div>
 
-            {/* THE FORM AREA */}
-            <div className="mt-12 mb-4 max-w-md mx-auto min-h-[150px]">
-                <div 
-                    className="beehiiv-embed" 
-                    data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
-                >
-                    {/* Beehiiv injects form here */}
-                </div>
+            {/* BEEHIIV IFRAME METHOD */}
+            <div className="mt-12 max-w-md mx-auto overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm p-4">
+                <iframe 
+                    src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?slim=1" 
+                    data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" 
+                    frameBorder="0" 
+                    scrolling="no" 
+                    style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent', width: '100%', height: '52px' }}
+                ></iframe>
+                <p className="text-[10px] text-slate-400 mt-2 uppercase tracking-widest font-medium">
+                    Insights to your inbox every two weeks
+                </p>
             </div>
 
-            <p className="mt-4 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
+            <p className="mt-10 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
         </header>
         {children}
       </body>
