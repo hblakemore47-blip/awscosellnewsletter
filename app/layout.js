@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
@@ -16,9 +17,16 @@ export default function RootLayout({ children }) {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7415160724940902400" target="_blank" rel="noopener noreferrer" className="libutton shadow-lg flex items-center justify-center">
-              Subscribe on LinkedIn
-            </a>
+            {/* THE TRIGGER BUTTON */}
+            {/* In Beehiiv: Set the CSS Selector to #beehiiv-popup-button */}
+            <button 
+              id="beehiiv-popup-button"
+              className="libutton shadow-lg cursor-pointer flex items-center justify-center border-none"
+              style={{ minWidth: '220px', height: '40px' }}
+            >
+              Subscribe to Newsletter
+            </button>
+
             <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm">
               Connect with Harry
             </a>
@@ -26,33 +34,11 @@ export default function RootLayout({ children }) {
 
           <div className="mt-6 flex justify-center">
             <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
-              🚀 Check your Co-sell Readiness
+              Check your Co-sell Readiness
             </a>
           </div>
 
-          {/* THE PERMANENT SUBSCRIPTION CARD */}
-          <div className="mt-16 max-w-md mx-auto">
-            <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden p-1">
-              <iframe 
-                src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?slim=1" 
-                frameBorder="0" 
-                scrolling="no" 
-                style={{ 
-                  margin: 0, 
-                  borderRadius: '20px', 
-                  backgroundColor: 'white', 
-                  width: '100%', 
-                  height: '60px', // Tight height for the slim version
-                  display: 'block'
-                }}
-              ></iframe>
-            </div>
-            <p className="mt-4 text-slate-400 font-bold text-[10px] uppercase tracking-[0.3em]">
-              JOIN 2,500+ AWS PARTNERS
-            </p>
-          </div>
-
-          <p className="mt-10 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
+          <p className="mt-12 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
         </header>
 
         <main>{children}</main>
@@ -62,6 +48,13 @@ export default function RootLayout({ children }) {
             &copy; 2026 AWS GTM Strategy. All rights reserved.
           </p>
         </footer>
+
+        {/* Beehiiv Pop-up Loader */}
+        <Script 
+          src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
+          strategy="afterInteractive"
+          data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
+        />
       </body>
     </html>
   );
