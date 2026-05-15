@@ -75,4 +75,79 @@
             { id: 'issue-10', title: 'Build vs Borrow: GTM Tools', date: 'Oct 31, 2025', preview: 'Should you build your Marketplace listing internally or use an execution platform? The case for prioritizing GTM speed.' },
             { id: 'issue-09', title: 'The AWS Passport Programme', date: 'Oct 17, 2025', preview: 'A powerful lever for regional expansion. How to use Marketplace as a commercial landing zone for new international markets.' },
             { id: 'issue-08', title: 'The $2,500 APN Fee', date: 'Oct 3, 2025', preview: 'Is it an expensive logo tax or a GTM growth hack? How to turn that fee into $3,500 in credits and a pipeline engine.' },
-            { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 202
+            { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 2025', preview: 'AWS is merging Partner Central and Marketplace. This is a mindset shift toward accessible, lean-team co-selling.' },
+            { id: 'issue-06', title: 'What is ACE?', date: 'Sept 5, 2025', preview: 'The golden rule: if it’s not in ACE, it doesn’t exist to AWS sellers. How to stop being invisible to the sales engine.' },
+            { id: 'issue-05', title: 'AWS Seller Prime: Worth the Hype?', date: 'Aug 22, 2025', preview: 'A plain-English breakdown for early-stage startups. Seller Prime is a lever, but only if you’re ready to pull it.' },
+            { id: 'issue-04', title: 'How Startups Get Stuck at Step 3', date: 'Aug 8, 2025', preview: 'The Better Together story is a filter, not a form. This is where most startups fail to answer: "Why should AWS care?"' },
+            { id: 'issue-03', title: 'Distribution: Friend or Foe?', date: 'July 25, 2025', preview: 'Distributors are the multipliers of co-sell scale. How they bridge the gap between ISVs and the broader AWS engine.' },
+            { id: 'issue-02', title: 'Is Marketplace Worth the Effort?', date: 'July 11, 2025', preview: 'Marketplace delivers strategic value long before the first transaction. It’s a co-sell accelerant, not just a transaction channel.' },
+            { id: 'issue-01', title: 'What AWS Sellers Care About', date: 'June 27, 2025', preview: 'If you don’t show up with specifics, AWS sellers won’t engage. This issue breaks down exactly what to say to co-own a deal.' }
+        ];
+
+        function init() {
+            const featuredGrid = document.getElementById('featured-grid');
+            const archiveList = document.getElementById('archive-list');
+            featuredGrid.innerHTML = '';
+            archiveList.innerHTML = '';
+
+            issues.forEach((issue, index) => {
+                if (index < 3) {
+                    featuredGrid.innerHTML += `
+                        <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full group">
+                            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">${issue.date}</span>
+                            <h3 class="text-2xl font-bold leading-tight text-slate-900 group-hover:text-blue-600 transition-colors">${issue.title}</h3>
+                            <p class="mt-4 text-slate-500 line-clamp-3 leading-relaxed flex-grow text-left">${issue.preview}</p>
+                            <span class="mt-8 text-slate-900 font-bold text-sm flex items-center">Read Edition <span class="ml-2 group-hover:ml-4 transition-all">→</span></span>
+                        </div>
+                    `;
+                }
+                
+                if (index >= 3) {
+                    const isHidden = index > 7 ? 'hidden-issue' : '';
+                    archiveList.innerHTML += `
+                        <div onclick="readIssue('${issue.id}')" class="archive-item ${isHidden} group flex justify-between items-center py-6 hover:px-4 hover:bg-white hover:shadow-md rounded-xl cursor-pointer transition-all border-b border-slate-100 last:border-0">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">${issue.date}</span>
+                                <span class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">${issue.title}</span>
+                            </div>
+                            <span class="text-slate-300 group-hover:text-blue-600 transition-colors text-2xl">→</span>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function showAllIssues() {
+            document.querySelectorAll('.archive-item').forEach(item => {
+                item.classList.remove('hidden-issue');
+                item.style.setProperty('display', 'flex', 'important');
+            });
+            document.getElementById('see-more-container').style.display = 'none';
+        }
+
+        async function readIssue(id) {
+            const modal = document.getElementById('reader-modal');
+            const contentDiv = document.getElementById('newsletter-content');
+            try {
+                const response = await fetch(`/content/files/${id}.md`);
+                if (!response.ok) throw new Error('Not found');
+                const text = await response.text();
+                const cleanText = text.replace(/^---[\s\S]*?---/, '');
+                contentDiv.innerHTML = marked.parse(cleanText);
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } catch (err) {
+                console.error(err);
+                alert("Edition could not be loaded. Please ensure " + id + ".md is in /content/files/.");
+            }
+        }
+
+        function closeReader() {
+            document.getElementById('reader-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
