@@ -12,6 +12,7 @@
         .prose th, .prose td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
         .prose th { background-color: #f8fafc; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        /* Ensuring hidden issues stay hidden until triggered */
         .hidden-issue { display: none !important; }
     </style>
 </head>
@@ -27,7 +28,7 @@
                 Connect on LinkedIn
             </a>
             <span class="text-slate-300">|</span>
-            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest">By Harry Blakemore</span>
+            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest text-center">By Harry Blakemore</span>
         </div>
     </header>
 
@@ -57,8 +58,6 @@
     </div>
 
     <script>
-        // FULL LIST OF ALL EDITIONS
-        // Edit the titles and previews below to match your actual newsletters.
         const issues = [
             { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The 2026 Response Gap is widening. Buyers now expect a sub-10 second response...' },
             { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'Partnership in the AWS ecosystem is no longer about who you know...' },
@@ -70,20 +69,20 @@
             { id: 'issue-17', title: 'The Future of ISVs', date: 'Feb 6, 2026', preview: 'Predicting the next major shift in how Independent Software Vendors build on Cloud...' },
             { id: 'issue-16', title: 'Strategic Alliances 101', date: 'Jan 23, 2026', preview: 'Building the foundation for long-term cloud growth...' },
             { id: 'issue-15', title: 'Marketplace Fundamentals', date: 'Jan 9, 2026', preview: 'The essential guide to your first listing...' },
-            { id: 'issue-14', title: 'Edition 14 Title', date: 'Dec 26, 2025', preview: 'Summary of edition 14...' },
-            { id: 'issue-13', title: 'Edition 13 Title', date: 'Dec 12, 2025', preview: 'Summary of edition 13...' },
-            { id: 'issue-12', title: 'Edition 12 Title', date: 'Nov 28, 2025', preview: 'Summary of edition 12...' },
-            { id: 'issue-11', title: 'Edition 11 Title', date: 'Nov 14, 2025', preview: 'Summary of edition 11...' },
-            { id: 'issue-10', title: 'Edition 10 Title', date: 'Oct 31, 2025', preview: 'Summary of edition 10...' },
-            { id: 'issue-09', title: 'Edition 09 Title', date: 'Oct 17, 2025', preview: 'Summary of edition 09...' },
-            { id: 'issue-08', title: 'Edition 08 Title', date: 'Oct 3, 2025', preview: 'Summary of edition 08...' },
-            { id: 'issue-07', title: 'Edition 07 Title', date: 'Sept 19, 2025', preview: 'Summary of edition 07...' },
-            { id: 'issue-06', title: 'Edition 06 Title', date: 'Sept 5, 2025', preview: 'Summary of edition 06...' },
-            { id: 'issue-05', title: 'Edition 05 Title', date: 'Aug 22, 2025', preview: 'Summary of edition 05...' },
-            { id: 'issue-04', title: 'Edition 04 Title', date: 'Aug 8, 2025', preview: 'Summary of edition 04...' },
-            { id: 'issue-03', title: 'Edition 03 Title', date: 'July 25, 2025', preview: 'Summary of edition 03...' },
-            { id: 'issue-02', title: 'Edition 02 Title', date: 'July 11, 2025', preview: 'Summary of edition 02...' },
-            { id: 'issue-01', title: 'Edition 01 Title', date: 'June 27, 2025', preview: 'Summary of edition 01...' }
+            { id: 'issue-14', title: 'Scaling Beyond the First Deal', date: 'Dec 26, 2025', preview: 'How to repeat your initial success consistently...' },
+            { id: 'issue-13', title: 'The Cloud Procurement Shift', date: 'Dec 12, 2025', preview: 'Why enterprises are moving their budgets to the cloud...' },
+            { id: 'issue-12', title: 'Optimizing Your Listing', date: 'Nov 28, 2025', preview: 'Tactical changes to improve conversion rates...' },
+            { id: 'issue-11', title: 'Building Trust with AWS', date: 'Nov 14, 2025', preview: 'Navigating the complex internal structures of Amazon...' },
+            { id: 'issue-10', title: 'The Q4 Push Strategy', date: 'Oct 31, 2025', preview: 'Maximizing year-end cloud spend opportunities...' },
+            { id: 'issue-09', title: 'Co-selling Without Friction', date: 'Oct 17, 2025', preview: 'Simplifying the collaborative sales process...' },
+            { id: 'issue-08', title: 'Marketplace Private Offers', date: 'Oct 3, 2025', preview: 'Everything you need to know about custom terms...' },
+            { id: 'issue-07', title: 'Navigating re:Invent', date: 'Sept 19, 2025', preview: 'A GTM strategy for the biggest cloud event of the year...' },
+            { id: 'issue-06', title: 'The Multi-Cloud Reality', date: 'Sept 5, 2025', preview: 'How to maintain focus while AWS dominates the spend...' },
+            { id: 'issue-05', title: 'Channel vs. Cloud Marketplace', date: 'Aug 22, 2025', preview: 'Finding the right balance for your indirect sales...' },
+            { id: 'issue-04', title: 'CPPO Explained', date: 'Aug 8, 2025', preview: 'Channel Partner Private Offers as a growth lever...' },
+            { id: 'issue-03', title: 'The ISV GTM Roadmap', date: 'July 25, 2025', preview: 'Phase by phase guide to cloud partnership...' },
+            { id: 'issue-02', title: 'AWS Sales Motion 101', date: 'July 11, 2025', preview: 'Speaking the language of the AWS field reps...' },
+            { id: 'issue-01', title: 'The First Step', date: 'June 27, 2025', preview: 'Welcome to the AWS GTM Strategy newsletter...' }
         ];
 
         function init() {
@@ -93,17 +92,19 @@
             archiveList.innerHTML = '';
 
             issues.forEach((issue, index) => {
+                // Top 3 Featured
                 if (index < 3) {
                     featuredGrid.innerHTML += `
                         <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full group">
                             <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">${issue.date}</span>
                             <h3 class="text-2xl font-bold leading-tight text-slate-900 group-hover:text-blue-600 transition-colors">${issue.title}</h3>
-                            <p class="mt-4 text-slate-500 line-clamp-3 leading-relaxed flex-grow">${issue.preview}</p>
+                            <p class="mt-4 text-slate-500 line-clamp-3 leading-relaxed flex-grow text-left">${issue.preview}</p>
                             <span class="mt-8 text-slate-900 font-bold text-sm flex items-center">Read Edition <span class="ml-2 group-hover:ml-4 transition-all">→</span></span>
                         </div>
                     `;
                 }
                 
+                // Archive List (Always index 3 and above)
                 if (index >= 3) {
                     const isHidden = index > 7 ? 'hidden-issue' : '';
                     archiveList.innerHTML += `
@@ -119,9 +120,12 @@
             });
         }
 
+        // Updated for maximum reliability
         function showAllIssues() {
-            document.querySelectorAll('.archive-item').forEach(item => {
+            const allHidden = document.querySelectorAll('.archive-item');
+            allHidden.forEach(item => {
                 item.classList.remove('hidden-issue');
+                item.style.setProperty('display', 'flex', 'important');
             });
             document.getElementById('see-more-container').style.display = 'none';
         }
@@ -139,7 +143,7 @@
                 document.body.style.overflow = 'hidden';
             } catch (err) {
                 console.error(err);
-                alert("Edition could not be loaded.");
+                alert("Edition could not be loaded. Please ensure the file " + id + ".md is in your /content/files/ folder.");
             }
         }
 
@@ -148,7 +152,8 @@
             document.body.style.overflow = 'auto';
         }
 
-        init();
+        // Start the engine
+        window.onload = init;
     </script>
 </body>
 </html>
