@@ -17,12 +17,12 @@ export default function RootLayout({ children }) {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            {/* THE TRIGGER BUTTON */}
-            {/* Ensure Beehiiv dashboard CSS Selector is set to: #beehiiv-popup-button */}
             <button 
               id="beehiiv-popup-button"
               className="libutton shadow-lg cursor-pointer flex items-center justify-center border-none"
               style={{ minWidth: '220px', height: '40px' }}
+              // This onClick helps the refresh logic know the popup was opened
+              onClick={() => { window.popupOpened = true; }}
             >
               Subscribe to Newsletter
             </button>
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
           <div className="mt-6 flex justify-center">
             <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
-              Check your Co-sell Readiness
+              🚀 Check your Co-sell Readiness
             </a>
           </div>
 
@@ -49,12 +49,25 @@ export default function RootLayout({ children }) {
           </p>
         </footer>
 
-        {/* Your Beehiiv Script integrated for Next.js */}
         <Script 
           src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
           strategy="afterInteractive"
           data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
         />
+
+        {/* REFRESH LOGIC: Refreshes page only after the popup has been opened and closed */}
+        <Script id="refresh-logic" strategy="afterInteractive">
+          {`
+            window.addEventListener('focus', function() {
+              if (window.popupOpened) {
+                // Small delay to ensure the popup is actually gone
+                setTimeout(() => {
+                  window.location.reload();
+                }, 500);
+              }
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
