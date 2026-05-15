@@ -12,14 +12,13 @@
         .prose th, .prose td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
         .prose th { background-color: #f8fafc; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        /* Ensuring hidden issues stay hidden until triggered */
         .hidden-issue { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans leading-normal">
 
     <header class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-        <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">AWS GTM Strategy</h1>
+        <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-slate-900 text-center">AWS GTM Strategy</h1>
         <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-light leading-relaxed text-center">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
         </p>
@@ -28,7 +27,7 @@
                 Connect on LinkedIn
             </a>
             <span class="text-slate-300">|</span>
-            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest text-center">By Harry Blakemore</span>
+            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest">By Harry Blakemore</span>
         </div>
     </header>
 
@@ -59,101 +58,21 @@
 
     <script>
         const issues = [
-            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The 2026 Response Gap is widening. Buyers now expect a sub-10 second response...' },
-            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'Partnership in the AWS ecosystem is no longer about who you know...' },
-            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Listing on the Marketplace is not a strategy. It is a prerequisite...' },
-            { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026', preview: 'When your sales team says one thing and your Marketplace listing says another...' },
-            { id: 'issue-20', title: 'Marketplace Maturity', date: 'March 20, 2026', preview: 'A deep dive into how enterprise buyers have shifted their procurement habits...' },
-            { id: 'issue-19', title: 'The Ecosystem Flywheel', date: 'March 6, 2026', preview: 'Generating momentum in a saturated cloud market requires a different kind of leverage...' },
-            { id: 'issue-18', title: 'Data-Driven Co-selling', date: 'Feb 20, 2026', preview: 'How to use CRM data to align with AWS Account Managers effectively...' },
-            { id: 'issue-17', title: 'The Future of ISVs', date: 'Feb 6, 2026', preview: 'Predicting the next major shift in how Independent Software Vendors build on Cloud...' },
-            { id: 'issue-16', title: 'Strategic Alliances 101', date: 'Jan 23, 2026', preview: 'Building the foundation for long-term cloud growth...' },
-            { id: 'issue-15', title: 'Marketplace Fundamentals', date: 'Jan 9, 2026', preview: 'The essential guide to your first listing...' },
-            { id: 'issue-14', title: 'Scaling Beyond the First Deal', date: 'Dec 26, 2025', preview: 'How to repeat your initial success consistently...' },
-            { id: 'issue-13', title: 'The Cloud Procurement Shift', date: 'Dec 12, 2025', preview: 'Why enterprises are moving their budgets to the cloud...' },
-            { id: 'issue-12', title: 'Optimizing Your Listing', date: 'Nov 28, 2025', preview: 'Tactical changes to improve conversion rates...' },
-            { id: 'issue-11', title: 'Building Trust with AWS', date: 'Nov 14, 2025', preview: 'Navigating the complex internal structures of Amazon...' },
-            { id: 'issue-10', title: 'The Q4 Push Strategy', date: 'Oct 31, 2025', preview: 'Maximizing year-end cloud spend opportunities...' },
-            { id: 'issue-09', title: 'Co-selling Without Friction', date: 'Oct 17, 2025', preview: 'Simplifying the collaborative sales process...' },
-            { id: 'issue-08', title: 'Marketplace Private Offers', date: 'Oct 3, 2025', preview: 'Everything you need to know about custom terms...' },
-            { id: 'issue-07', title: 'Navigating re:Invent', date: 'Sept 19, 2025', preview: 'A GTM strategy for the biggest cloud event of the year...' },
-            { id: 'issue-06', title: 'The Multi-Cloud Reality', date: 'Sept 5, 2025', preview: 'How to maintain focus while AWS dominates the spend...' },
-            { id: 'issue-05', title: 'Channel vs. Cloud Marketplace', date: 'Aug 22, 2025', preview: 'Finding the right balance for your indirect sales...' },
-            { id: 'issue-04', title: 'CPPO Explained', date: 'Aug 8, 2025', preview: 'Channel Partner Private Offers as a growth lever...' },
-            { id: 'issue-03', title: 'The ISV GTM Roadmap', date: 'July 25, 2025', preview: 'Phase by phase guide to cloud partnership...' },
-            { id: 'issue-02', title: 'AWS Sales Motion 101', date: 'July 11, 2025', preview: 'Speaking the language of the AWS field reps...' },
-            { id: 'issue-01', title: 'The First Step', date: 'June 27, 2025', preview: 'Welcome to the AWS GTM Strategy newsletter...' }
-        ];
-
-        function init() {
-            const featuredGrid = document.getElementById('featured-grid');
-            const archiveList = document.getElementById('archive-list');
-            featuredGrid.innerHTML = '';
-            archiveList.innerHTML = '';
-
-            issues.forEach((issue, index) => {
-                // Top 3 Featured
-                if (index < 3) {
-                    featuredGrid.innerHTML += `
-                        <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full group">
-                            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">${issue.date}</span>
-                            <h3 class="text-2xl font-bold leading-tight text-slate-900 group-hover:text-blue-600 transition-colors">${issue.title}</h3>
-                            <p class="mt-4 text-slate-500 line-clamp-3 leading-relaxed flex-grow text-left">${issue.preview}</p>
-                            <span class="mt-8 text-slate-900 font-bold text-sm flex items-center">Read Edition <span class="ml-2 group-hover:ml-4 transition-all">→</span></span>
-                        </div>
-                    `;
-                }
-                
-                // Archive List (Always index 3 and above)
-                if (index >= 3) {
-                    const isHidden = index > 7 ? 'hidden-issue' : '';
-                    archiveList.innerHTML += `
-                        <div onclick="readIssue('${issue.id}')" class="archive-item ${isHidden} group flex justify-between items-center py-6 hover:px-4 hover:bg-white hover:shadow-md rounded-xl cursor-pointer transition-all border-b border-slate-100 last:border-0">
-                            <div class="flex flex-col">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">${issue.date}</span>
-                                <span class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">${issue.title}</span>
-                            </div>
-                            <span class="text-slate-300 group-hover:text-blue-600 transition-colors text-2xl">→</span>
-                        </div>
-                    `;
-                }
-            });
-        }
-
-        // Updated for maximum reliability
-        function showAllIssues() {
-            const allHidden = document.querySelectorAll('.archive-item');
-            allHidden.forEach(item => {
-                item.classList.remove('hidden-issue');
-                item.style.setProperty('display', 'flex', 'important');
-            });
-            document.getElementById('see-more-container').style.display = 'none';
-        }
-
-        async function readIssue(id) {
-            const modal = document.getElementById('reader-modal');
-            const contentDiv = document.getElementById('newsletter-content');
-            try {
-                const response = await fetch(`/content/files/${id}.md`);
-                if (!response.ok) throw new Error('Not found');
-                const text = await response.text();
-                const cleanText = text.replace(/^---[\s\S]*?---/, '');
-                contentDiv.innerHTML = marked.parse(cleanText);
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } catch (err) {
-                console.error(err);
-                alert("Edition could not be loaded. Please ensure the file " + id + ".md is in your /content/files/ folder.");
-            }
-        }
-
-        function closeReader() {
-            document.getElementById('reader-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Start the engine
-        window.onload = init;
-    </script>
-</body>
-</html>
+            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The era of "Who you know" at AWS is being rapidly augmented by "What the machine knows about you." Is your metadata ready for the matching engine?' },
+            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'The rise of the Cloud Marketplace is effectively rezoning the entire partner neighborhood. If your only value was procurement, you are being automated out.' },
+            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Most GTM strategies follow a predictable, linear path: Launch, Enable, and Hope. But a strategy is static while the sales cycle is a moving target.' },
+            { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026', preview: 'Efficiency without a shared framework is just faster noise. How to manage the "Shadow Efficiency" of AI tools in your sales team.' },
+            { id: 'issue-20', title: 'Execution Platforms & Co-sell GTM', date: 'March 20, 2026', preview: 'Most partnerships fail because of an execution bottleneck. We need to move co-sell out of the alliances office and into the hands of the AEs.' },
+            { id: 'issue-19', title: 'Concurrent Agreements on Marketplace', date: 'March 6, 2026', preview: 'A major update to Marketplace: the ability to support concurrent private offers. Here is why this signals a deeper shift in AWS customer-centricity.' },
+            { id: 'issue-18', title: 'Co-selling in the World of AI', date: 'Feb 20, 2026', preview: 'Amazon is committing $200bn to the AI arms race. This decision reshapes incentives for every partner in the ecosystem.' },
+            { id: 'issue-17', title: 'Marketplaces as the New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn’t arrive because the old way is impossible—it arrives because someone decides the old way is no longer good enough.' },
+            { id: 'issue-16', title: 'Are you AWS Co-sell Ready?', date: 'Jan 23, 2026', preview: 'With marketplaces set to hit $85bn by 2028, the opportunity cost of not being optimized is becoming higher than ever.' },
+            { id: 'issue-15', title: 'What ISVs Need to Know for 2026', date: 'Jan 9, 2026', preview: 'A look ahead at the themes of 2026: AI as an ecosystem, agentic procurement, and the shift from product-centric to solution-centric selling.' },
+            { id: 'issue-14', title: 're:Cap from re:Invent', date: 'Dec 26, 2025', preview: 'The cloud is evolving from infrastructure to autonomous systems. Key takeaways for Marketplace sellers from AWS re:Invent.' },
+            { id: 'issue-13', title: 'Strong Better Together Stories', date: 'Dec 12, 2025', preview: 'What real success looks like. Examining Coveo, Armis, and SUSE Rancher to see how they drive incremental AWS consumption.' },
+            { id: 'issue-12', title: 'The AWS Co-Sell Playbook', date: 'Nov 28, 2025', preview: 'Distilling 11 weeks of AWS GTM into 10 core lessons. From ACE visibility to the hidden multiplier of distributors.' },
+            { id: 'issue-11', title: 'Building Global Reach', date: 'Nov 14, 2025', preview: 'How ISVs scale internationally through AWS without building global overhead. Replicating trust instead of replicating operations.' },
+            { id: 'issue-10', title: 'Build vs Borrow: GTM Tools', date: 'Oct 31, 2025', preview: 'Should you build your Marketplace listing internally or use an execution platform? The case for prioritizing GTM speed.' },
+            { id: 'issue-09', title: 'The AWS Passport Programme', date: 'Oct 17, 2025', preview: 'A powerful lever for regional expansion. How to use Marketplace as a commercial landing zone for new international markets.' },
+            { id: 'issue-08', title: 'The $2,500 APN Fee', date: 'Oct 3, 2025', preview: 'Is it an expensive logo tax or a GTM growth hack? How to turn that fee into $3,500 in credits and a pipeline engine.' },
+            { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 202
