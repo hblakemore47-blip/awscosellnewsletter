@@ -17,12 +17,12 @@ export default function RootLayout({ children }) {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+            {/* TRIGGER BUTTON WITH AUTO-RESET */}
             <button 
               id="beehiiv-popup-button"
               className="libutton shadow-lg cursor-pointer flex items-center justify-center border-none"
               style={{ minWidth: '220px', height: '40px' }}
-              // We use a string for the onclick to keep it simple for the build
-              onClickCapture="window.popupOpened = true;"
+              onClickCapture="setTimeout(function(){ window.location.reload(); }, 10000);"
             >
               Subscribe to Newsletter
             </button>
@@ -49,25 +49,12 @@ export default function RootLayout({ children }) {
           </p>
         </footer>
 
-        {/* Beehiiv Script */}
+        {/* Beehiiv Loader */}
         <Script 
           src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
           strategy="afterInteractive"
           data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
         />
-
-        {/* Vercel-Safe Refresh Logic */}
-        <Script id="refresh-logic" strategy="afterInteractive">
-          {`
-            window.addEventListener('focus', function() {
-              if (window.popupOpened) {
-                setTimeout(function() {
-                  window.location.reload();
-                }, 500);
-              }
-            });
-          `}
-        </Script>
       </body>
     </html>
   );
