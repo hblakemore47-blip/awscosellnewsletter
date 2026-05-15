@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
@@ -17,23 +16,34 @@ export default function RootLayout({ children }) {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            {/* THE TRIGGER BUTTON */}
-            {/* In Beehiiv: Set the CSS Selector to #beehiiv-popup-button */}
-            <button 
-              id="beehiiv-popup-button"
-              className="libutton shadow-lg cursor-pointer flex items-center justify-center border-none"
+            {/* REDIRECT BUTTON */}
+            <a 
+              href="https://www.linkedin.com/newsletters/aws-marketplace-co-sell-7415160724940902400/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="libutton shadow-lg flex items-center justify-center"
               style={{ minWidth: '220px', height: '40px' }}
             >
-              Subscribe to Newsletter
-            </button>
+              Subscribe on LinkedIn
+            </a>
 
-            <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm">
+            <a 
+              href="https://www.linkedin.com/in/harryblakemore/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm"
+            >
               Connect with Harry
             </a>
           </div>
 
           <div className="mt-6 flex justify-center">
-            <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
+            <a 
+              href="https://aws.coss.atlasgtm.live/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2"
+            >
               Check your Co-sell Readiness
             </a>
           </div>
@@ -48,13 +58,6 @@ export default function RootLayout({ children }) {
             &copy; 2026 AWS GTM Strategy. All rights reserved.
           </p>
         </footer>
-
-        {/* Beehiiv Pop-up Loader */}
-        <Script 
-          src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
-          strategy="afterInteractive"
-          data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
-        />
       </body>
     </html>
   );
