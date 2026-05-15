@@ -13,22 +13,49 @@
         .prose th { background-color: #f8fafc; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .hidden-issue { display: none !important; }
+        
+        /* LinkedIn Specific Styling */
+        .libutton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 7px;
+            text-align: center;
+            outline: none;
+            text-decoration: none !important;
+            color: #ffffff !important;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #0A66C2;
+            font-family: "SF Pro Text", Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .libutton:hover {
+            background-color: #004182;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans leading-normal">
 
     <header class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-        <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-slate-900 text-center">AWS GTM Strategy</h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-light leading-relaxed text-center">
+        <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">AWS GTM Strategy</h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
         </p>
-        <div class="flex justify-center items-center space-x-4">
-            <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" class="bg-[#0077b5] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition shadow-lg shadow-blue-900/10">
-                Connect on LinkedIn
+        
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <a class="libutton shadow-lg" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7415160724940902400" target="_blank">
+                Subscribe on LinkedIn
             </a>
-            <span class="text-slate-300">|</span>
-            <span class="text-slate-500 font-medium text-sm uppercase tracking-widest">By Harry Blakemore</span>
+            <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" class="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm">
+                Connect with Harry
+            </a>
         </div>
+        
+        <p class="mt-8 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">By Harry Blakemore</p>
     </header>
 
     <section class="max-w-6xl mx-auto px-6 mb-24">
@@ -58,30 +85,30 @@
 
     <script>
         const issues = [
-            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The era of "Who you know" at AWS is being rapidly augmented by "What the machine knows about you." Is your metadata ready for the matching engine?' },
-            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'The rise of the Cloud Marketplace is effectively rezoning the entire partner neighborhood. If your only value was procurement, you are being automated out.' },
-            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Most GTM strategies follow a predictable, linear path: Launch, Enable, and Hope. But a strategy is static while the sales cycle is a moving target.' },
+            { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The era of "Who you know" at AWS is being rapidly augmented by "What the machine knows about you." Is your metadata ready?' },
+            { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'The rise of the Cloud Marketplace is effectively rezoning the entire partner neighborhood. If your value was only procurement, take note.' },
+            { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Most GTM strategies follow a linear path: Launch, Enable, and Hope. But strategy is static while the sales cycle is a moving target.' },
             { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026', preview: 'Efficiency without a shared framework is just faster noise. How to manage the "Shadow Efficiency" of AI tools in your sales team.' },
-            { id: 'issue-20', title: 'Execution Platforms & Co-sell GTM', date: 'March 20, 2026', preview: 'Most partnerships fail because of an execution bottleneck. We need to move co-sell out of the alliances office and into the hands of the AEs.' },
-            { id: 'issue-19', title: 'Concurrent Agreements on Marketplace', date: 'March 6, 2026', preview: 'A major update to Marketplace: the ability to support concurrent private offers. Here is why this signals a deeper shift in AWS customer-centricity.' },
+            { id: 'issue-20', title: 'Execution Platforms & Co-sell', date: 'March 20, 2026', preview: 'Most partnerships fail because of an execution bottleneck. We need to move co-sell out of the alliances office and into the field.' },
+            { id: 'issue-19', title: 'Concurrent Agreements', date: 'March 6, 2026', preview: 'A major update to Marketplace: support for concurrent private offers. This signals a deeper shift in AWS customer-centricity.' },
             { id: 'issue-18', title: 'Co-selling in the World of AI', date: 'Feb 20, 2026', preview: 'Amazon is committing $200bn to the AI arms race. This decision reshapes incentives for every partner in the ecosystem.' },
-            { id: 'issue-17', title: 'Marketplaces as the New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn’t arrive because the old way is impossible—it arrives because someone decides the old way is no longer good enough.' },
+            { id: 'issue-17', title: 'Marketplaces: The New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn’t arrive because the old way is impossible—it arrives because someone decides it’s no longer good enough.' },
             { id: 'issue-16', title: 'Are you AWS Co-sell Ready?', date: 'Jan 23, 2026', preview: 'With marketplaces set to hit $85bn by 2028, the opportunity cost of not being optimized is becoming higher than ever.' },
-            { id: 'issue-15', title: 'What ISVs Need to Know for 2026', date: 'Jan 9, 2026', preview: 'A look ahead at the themes of 2026: AI as an ecosystem, agentic procurement, and the shift from product-centric to solution-centric selling.' },
+            { id: 'issue-15', title: 'ISV Outlook for 2026', date: 'Jan 9, 2026', preview: 'A look ahead: AI as an ecosystem, agentic procurement, and the shift from product-centric to solution-centric selling.' },
             { id: 'issue-14', title: 're:Cap from re:Invent', date: 'Dec 26, 2025', preview: 'The cloud is evolving from infrastructure to autonomous systems. Key takeaways for Marketplace sellers from AWS re:Invent.' },
-            { id: 'issue-13', title: 'Strong Better Together Stories', date: 'Dec 12, 2025', preview: 'What real success looks like. Examining Coveo, Armis, and SUSE Rancher to see how they drive incremental AWS consumption.' },
+            { id: 'issue-13', title: 'Better Together Success Stories', date: 'Dec 12, 2025', preview: 'Examining Coveo, Armis, and SUSE Rancher to see how they drive incremental AWS consumption through clear value narratives.' },
             { id: 'issue-12', title: 'The AWS Co-Sell Playbook', date: 'Nov 28, 2025', preview: 'Distilling 11 weeks of AWS GTM into 10 core lessons. From ACE visibility to the hidden multiplier of distributors.' },
-            { id: 'issue-11', title: 'Building Global Reach', date: 'Nov 14, 2025', preview: 'How ISVs scale internationally through AWS without building global overhead. Replicating trust instead of replicating operations.' },
+            { id: 'issue-11', title: 'Building Global Reach', date: 'Nov 14, 2025', preview: 'How ISVs scale internationally through AWS without building global overhead. Replicating trust instead of operations.' },
             { id: 'issue-10', title: 'Build vs Borrow: GTM Tools', date: 'Oct 31, 2025', preview: 'Should you build your Marketplace listing internally or use an execution platform? The case for prioritizing GTM speed.' },
             { id: 'issue-09', title: 'The AWS Passport Programme', date: 'Oct 17, 2025', preview: 'A powerful lever for regional expansion. How to use Marketplace as a commercial landing zone for new international markets.' },
-            { id: 'issue-08', title: 'The $2,500 APN Fee', date: 'Oct 3, 2025', preview: 'Is it an expensive logo tax or a GTM growth hack? How to turn that fee into $3,500 in credits and a pipeline engine.' },
-            { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 2025', preview: 'AWS is merging Partner Central and Marketplace. This is a mindset shift toward accessible, lean-team co-selling.' },
-            { id: 'issue-06', title: 'What is ACE?', date: 'Sept 5, 2025', preview: 'The golden rule: if it’s not in ACE, it doesn’t exist to AWS sellers. How to stop being invisible to the sales engine.' },
-            { id: 'issue-05', title: 'AWS Seller Prime: Worth the Hype?', date: 'Aug 22, 2025', preview: 'A plain-English breakdown for early-stage startups. Seller Prime is a lever, but only if you’re ready to pull it.' },
-            { id: 'issue-04', title: 'How Startups Get Stuck at Step 3', date: 'Aug 8, 2025', preview: 'The Better Together story is a filter, not a form. This is where most startups fail to answer: "Why should AWS care?"' },
+            { id: 'issue-08', title: 'The $2,500 APN Fee', date: 'Oct 3, 2025', preview: 'Is it a logo tax or a growth hack? How to turn that fee into $3,500 in credits and a pipeline engine.' },
+            { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 2025', preview: 'AWS is merging Partner Central and Marketplace. A mindset shift toward accessible, lean-team co-selling.' },
+            { id: 'issue-06', title: 'What is ACE?', date: 'Sept 5, 2025', preview: 'The golden rule: if it’s not in ACE, it doesn’t exist to AWS sellers. Stop being invisible to the sales engine.' },
+            { id: 'issue-05', title: 'AWS Seller Prime: Worth It?', date: 'Aug 22, 2025', preview: 'A breakdown for startups. Seller Prime is a lever, but only if you’re actually ready to pull it.' },
+            { id: 'issue-04', title: 'Stuck at Step 3', date: 'Aug 8, 2025', preview: 'The Better Together story is a filter, not a form. This is where most startups fail to answer: "Why should AWS care?"' },
             { id: 'issue-03', title: 'Distribution: Friend or Foe?', date: 'July 25, 2025', preview: 'Distributors are the multipliers of co-sell scale. How they bridge the gap between ISVs and the broader AWS engine.' },
-            { id: 'issue-02', title: 'Is Marketplace Worth the Effort?', date: 'July 11, 2025', preview: 'Marketplace delivers strategic value long before the first transaction. It’s a co-sell accelerant, not just a transaction channel.' },
-            { id: 'issue-01', title: 'What AWS Sellers Care About', date: 'June 27, 2025', preview: 'If you don’t show up with specifics, AWS sellers won’t engage. This issue breaks down exactly what to say to co-own a deal.' }
+            { id: 'issue-02', title: 'Is Marketplace Worth the Effort?', date: 'July 11, 2025', preview: 'Marketplace delivers strategic value before the first transaction. It’s a co-sell accelerant, not just a channel.' },
+            { id: 'issue-01', title: 'What AWS Sellers Care About', date: 'June 27, 2025', preview: 'If you don’t show up with specifics, AWS sellers won’t engage. Here is exactly what to say to co-own a deal.' }
         ];
 
         function init() {
@@ -138,7 +165,7 @@
                 document.body.style.overflow = 'hidden';
             } catch (err) {
                 console.error(err);
-                alert("Edition could not be loaded. Please ensure " + id + ".md is in /content/files/.");
+                alert("Edition could not be loaded.");
             }
         }
 
