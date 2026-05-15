@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
           </p>
           
-          {/* Social and Tool Buttons */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <a className="libutton shadow-lg" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7415160724940902400" target="_blank">
               Subscribe on LinkedIn
@@ -32,10 +31,10 @@ export default function RootLayout({ children }) {
             </a>
           </div>
 
-          {/* Beehiiv Email Box */}
-          <div className="mt-12 max-w-md mx-auto overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl p-8">
+          {/* BEEHIIV IFRAME - CACHE BUSTER VERSION */}
+          <div className="mt-12 max-w-md mx-auto overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl p-6">
             <iframe 
-              src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?slim=1" 
+              src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?slim=1&v=2" 
               data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" 
               frameBorder="0" 
               scrolling="no" 
@@ -44,10 +43,11 @@ export default function RootLayout({ children }) {
                 borderRadius: '0px', 
                 backgroundColor: 'transparent', 
                 width: '100%', 
-                height: '52px' 
+                height: '80px', 
+                display: 'block'
               }}
             ></iframe>
-            <p className="text-[10px] text-slate-400 mt-4 uppercase tracking-[0.2em] font-bold">
+            <p className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em] font-bold">
               Direct to your inbox every two weeks
             </p>
           </div>
