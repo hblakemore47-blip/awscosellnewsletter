@@ -48,7 +48,7 @@
     <div id="reader-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden overflow-y-auto">
         <div class="min-h-screen px-4 py-12 flex items-center justify-center">
             <div class="bg-white w-full max-w-4xl rounded-3xl shadow-2xl relative p-8 md:p-12">
-                <button onclick="closeReader()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 text-2xl">&times;</button>
+                <button onclick="closeReader()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 text-2xl font-bold">&times;</button>
                 <div id="newsletter-content" class="prose prose-slate lg:prose-xl max-w-none">
                     </div>
             </div>
@@ -57,13 +57,12 @@
 
     <script>
         // LIST YOUR ISSUES HERE. 
-        // When you add a new .md file, just add the filename to the top of this list.
+        // Note: Make sure the 'id' matches your filename in /content/files/ exactly.
         const issues = [
             { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026' },
             { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026' },
             { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026' },
-            { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026' },
-            // Add older issues here...
+            { id: 'issue-21', title: 'The Coherence Gap', date: 'April 3, 2026' }
         ];
 
         function init() {
@@ -75,18 +74,16 @@
 
             issues.forEach((issue, index) => {
                 if (index < 3) {
-                    // Render big widgets
                     featuredGrid.innerHTML += `
                         <div onclick="readIssue('${issue.id}')" class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition cursor-pointer flex flex-col justify-between h-full">
                             <div>
                                 <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">${issue.date}</span>
-                                <h3 class="text-2xl font-bold mt-4 leading-tight">${issue.title}</h3>
+                                <h3 class="text-2xl font-bold mt-4 leading-tight text-slate-900">${issue.title}</h3>
                             </div>
                             <span class="mt-8 text-slate-400 font-medium flex items-center">Read Issue <span class="ml-2">→</span></span>
                         </div>
                     `;
                 } else {
-                    // Render simple list
                     archiveList.innerHTML += `
                         <div onclick="readIssue('${issue.id}')" class="flex justify-between items-center p-4 hover:bg-white hover:shadow-sm rounded-xl cursor-pointer transition border-b border-slate-100">
                             <span class="font-semibold text-slate-700">${issue.title}</span>
@@ -102,7 +99,13 @@
             const contentDiv = document.getElementById('newsletter-content');
             
             try {
-                const response = await fetch(`./content/${id}.md`);
+                // Updated Path: points to content folder, then files folder.
+                const response = await fetch(`/content/files/${id}.md`);
+                
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
+
                 const text = await response.text();
                 // Clean up frontmatter if it exists in the .md file
                 const cleanText = text.replace(/^---[\s\S]*?---/, '');
@@ -111,7 +114,7 @@
                 document.body.style.overflow = 'hidden';
             } catch (err) {
                 console.error("Error loading markdown:", err);
-                alert("Failed to load issue.");
+                alert("Could not load the newsletter. Please verify that " + id + ".md is inside the /content/files/ folder on GitHub.");
             }
         }
 
