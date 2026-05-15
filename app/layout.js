@@ -1,4 +1,4 @@
-"use client"; // This allows the button to be interactive
+"use client";
 
 import "./globals.css";
 import { useState } from "react";
@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            {/* TOGGLE BUTTON */}
             <button 
               onClick={() => setShowForm(!showForm)}
               className="libutton shadow-lg cursor-pointer flex items-center justify-center border-none"
@@ -30,21 +29,22 @@ export default function RootLayout({ children }) {
             </a>
           </div>
 
-          {/* THE REVEALED FORM */}
           {showForm && (
-            <div className="mt-8 max-w-md mx-auto animate-in fade-in slide-in-from-top-4 duration-500">
+            <div className="mt-8 max-w-md mx-auto animate-in fade-in zoom-in duration-300">
                 <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden p-2">
                 <iframe 
-                    src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?v=final_reveal" 
+                    src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" 
                     frameBorder="0" 
                     scrolling="no" 
                     style={{ 
-                    margin: 0, 
-                    borderRadius: '20px', 
-                    backgroundColor: 'white', 
-                    width: '100%', 
-                    height: '180px', 
-                    display: 'block' 
+                        margin: 0, 
+                        borderRadius: '20px', 
+                        backgroundColor: 'white', 
+                        width: '100%', 
+                        height: '180px', 
+                        display: 'block',
+                        /* THE COLOR FIX: This shifts the neon green toward a LinkedIn blue */
+                        filter: 'hue-rotate(190deg) brightness(0.9) saturate(1.2)'
                     }}
                 ></iframe>
                 </div>
