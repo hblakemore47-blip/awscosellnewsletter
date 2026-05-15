@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
@@ -10,6 +11,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900 font-sans">
+        {/* This loads the Beehiiv engine correctly for Next.js */}
+        <Script 
+          src="https://subscribe-forms.beehiiv.com/v3/loader.js" 
+          strategy="afterInteractive" 
+        />
+
         <header className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
           <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">AWS GTM Strategy</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light">
@@ -31,24 +38,16 @@ export default function RootLayout({ children }) {
             </a>
           </div>
 
-          {/* BEEHIIV IFRAME - CACHE BUSTER VERSION */}
-          <div className="mt-12 max-w-md mx-auto overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl p-6">
-            <iframe 
-              src="https://embeds.beehiiv.com/d69decc8-4dc9-490a-aaf5-7c1cb3c98a14?slim=1&v=2" 
-              data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ 
-                margin: 0, 
-                borderRadius: '0px', 
-                backgroundColor: 'transparent', 
-                width: '100%', 
-                height: '80px', 
-                display: 'block'
-              }}
-            ></iframe>
-            <p className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em] font-bold">
-              Direct to your inbox every two weeks
+          {/* BEEHIIV LOADER SECTION */}
+          <div className="mt-12 max-w-md mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl p-8 min-h-[160px]">
+            <div 
+              className="beehiiv-embed" 
+              data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"
+            >
+              {/* The script will find this div and inject the form here */}
+            </div>
+            <p className="text-[10px] text-slate-400 mt-6 uppercase tracking-[0.2em] font-bold">
+              Insights to your inbox every two weeks
             </p>
           </div>
 
