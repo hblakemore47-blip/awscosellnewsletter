@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
               Check your Co-sell Readiness
             </a>
           </div>
-          <div className="flex justify-end max-w-2xl mx-auto mb-4">
+          <div className="flex justify-centre max-w-2xl mx-auto mb-4">
             <BeehiivForm />
           </div>
           <p className="mt-2 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
