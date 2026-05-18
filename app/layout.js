@@ -17,19 +17,21 @@ export default function RootLayout({ children }) {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6 font-light">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-3 mb-4">
+          <div className="flex flex-wrap justify-center items-center gap-3 mb-3">
             <a href="https://www.linkedin.com/newsletters/aws-marketplace-co-sell-7415160724940902400/" target="_blank" rel="noopener noreferrer" className="libutton shadow-lg flex items-center justify-center" style={{ minWidth: '200px', height: '40px' }}>
               Subscribe on LinkedIn
             </a>
             <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-600 px-6 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center text-sm">
               Connect with Harry
             </a>
-            <BeehiivForm inline />
             <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-6 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
               Check your Co-sell Readiness
             </a>
           </div>
-          <p className="mt-4 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
+          <div className="flex justify-end max-w-2xl mx-auto mb-4">
+            <BeehiivForm />
+          </div>
+          <p className="mt-2 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
             By Harry Blakemore
           </p>
         </header>
