@@ -12,13 +12,21 @@ export default function BeehiivForm() {
     script.setAttribute("data-beehiiv-form", "d69decc8-4dc9-490a-aaf5-7c1cb3c98a14");
     script.onload = () => {
       if (window.beehiiv) window.beehiiv.init();
+      setTimeout(() => {
+        if (!ref.current) return;
+        const inner = ref.current.querySelector("iframe, div, form");
+        if (inner) {
+          inner.style.margin = "0 auto";
+          inner.style.display = "block";
+        }
+      }, 500);
     };
     ref.current.appendChild(script);
   }, []);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-      <div ref={ref} data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" style={{ width: '100%', maxWidth: '480px' }}></div>
+    <div style={{ width: '100%', textAlign: 'center' }}>
+      <div ref={ref} data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" style={{ display: 'inline-block', margin: '0 auto' }}></div>
     </div>
   );
 }
