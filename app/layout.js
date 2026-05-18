@@ -21,49 +21,27 @@ export default function RootLayout({ children }) {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
           </p>
-
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
-            
-              href="https://www.linkedin.com/newsletters/aws-marketplace-co-sell-7415160724940902400/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="libutton shadow-lg flex items-center justify-center"
-              style={{ minWidth: '220px', height: '40px' }}
-            >
+            <a href="https://www.linkedin.com/newsletters/aws-marketplace-co-sell-7415160724940902400/" target="_blank" rel="noopener noreferrer" className="libutton shadow-lg flex items-center justify-center" style={{ minWidth: '220px', height: '40px' }}>
               Subscribe on LinkedIn
             </a>
-            
-              href="https://www.linkedin.com/in/harryblakemore/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm"
-            >
+            <a href="https://www.linkedin.com/in/harryblakemore/" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-600 px-8 py-2 rounded-full font-semibold hover:bg-slate-50 transition h-[40px] flex items-center justify-center w-[200px] text-sm">
               Connect with Harry
             </a>
           </div>
-
           <div className="flex justify-center mb-4">
             <div data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"></div>
           </div>
-
           <div className="flex justify-center">
-            
-              href="https://aws.coss.atlasgtm.live/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2"
-            >
+            <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
               Check your Co-sell Readiness
             </a>
           </div>
-
           <p className="mt-12 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
             By Harry Blakemore
           </p>
         </header>
-
         <main>{children}</main>
-
         <footer className="max-w-6xl mx-auto px-6 py-12 text-center border-t border-slate-100">
           <p className="text-slate-400 text-sm">
             &copy; 2026 AWS GTM Strategy. All rights reserved.
