@@ -10,10 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900 font-sans">
-        <Script
-          src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-          strategy="afterInteractive"
-        />
+        <Script src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" strategy="afterInteractive" />
         <header className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
           <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
             AWS GTM Strategy
