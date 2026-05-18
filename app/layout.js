@@ -1,5 +1,5 @@
 import "./globals.css";
-import Script from "next/script";
+import BeehiivForm from "./BeehiivForm";
 
 export const metadata = {
   title: "AWS GTM Strategy | Harry Blakemore",
@@ -10,7 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900 font-sans">
-        <Script src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14" strategy="afterInteractive" />
         <header className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
           <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
             AWS GTM Strategy
@@ -26,9 +25,7 @@ export default function RootLayout({ children }) {
               Connect with Harry
             </a>
           </div>
-          <div className="flex justify-center mb-4">
-            <div data-beehiiv-form="d69decc8-4dc9-490a-aaf5-7c1cb3c98a14"></div>
-          </div>
+          <BeehiivForm />
           <div className="flex justify-center">
             <a href="https://aws.coss.atlasgtm.live/" target="_blank" rel="noopener noreferrer" className="bg-orange-50 text-orange-600 border border-orange-200 px-10 py-2 rounded-full font-bold hover:bg-orange-100 transition text-sm shadow-sm flex items-center gap-2">
               Check your Co-sell Readiness
