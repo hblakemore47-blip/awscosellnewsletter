@@ -10,11 +10,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900 font-sans">
-        <header className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-          <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
+        <header className="max-w-6xl mx-auto px-6 pt-10 pb-8 text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight mb-3 text-slate-900">
             AWS GTM Strategy
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6 font-light">
             Insights on Marketplace, Co-sell, and GTM strategy for Startups & ISVs.
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
@@ -31,12 +31,12 @@ export default function RootLayout({ children }) {
               Check your Co-sell Readiness
             </a>
           </div>
-          <p className="mt-12 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
+          <p className="mt-6 text-slate-400 font-medium text-xs uppercase tracking-[0.3em]">
             By Harry Blakemore
           </p>
         </header>
         <main>{children}</main>
-        <footer className="max-w-6xl mx-auto px-6 py-12 text-center border-t border-slate-100">
+        <footer className="max-w-6xl mx-auto px-6 py-8 text-center border-t border-slate-100">
           <p className="text-slate-400 text-sm">
             &copy; 2026 AWS GTM Strategy. All rights reserved.
           </p>
