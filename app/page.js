@@ -9,7 +9,7 @@ const issues = [
     { id: 'issue-20', title: 'Execution Platforms & Co-sell', date: 'March 20, 2026', preview: 'Most partnerships fail because of an execution bottleneck. We need to move co-sell out into the field.' },
     { id: 'issue-19', title: 'Concurrent Agreements', date: 'March 6, 2026', preview: 'A major update to Marketplace: support for concurrent private offers. This signals a shift in customer-centricity.' },
     { id: 'issue-18', title: 'Co-selling in the World of AI', date: 'Feb 20, 2026', preview: 'Amazon is committing $200bn to the AI arms race. This decision reshapes incentives for every partner.' },
-    { id: 'issue-17', title: 'Marketplaces: The New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn't arrive because the old way is impossible—it arrives because the old way isn\'t good enough.' },
+    { id: 'issue-17', title: 'Marketplaces: The New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn\'t arrive because the old way is impossible—it arrives because the old way isn\'t good enough.' },
     { id: 'issue-16', title: 'Are you AWS Co-sell Ready?', date: 'Jan 23, 2026', preview: 'With marketplaces set to hit $85bn by 2028, the opportunity cost of not being optimized is higher than ever.' },
     { id: 'issue-15', title: 'ISV Outlook for 2026', date: 'Jan 9, 2026', preview: 'A look ahead: AI as an ecosystem, agentic procurement, and the shift toward solution-centric selling.' },
     { id: 'issue-14', title: 're:Cap from re:Invent', date: 'Dec 26, 2025', preview: 'The cloud is evolving from infrastructure to autonomous systems. Key takeaways for Marketplace sellers.' },
