@@ -16,11 +16,9 @@ export async function generateMetadata({ params }) {
   const filePath = path.join(process.cwd(), 'content/files', `${slug}.md`);
   const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
   const { data } = matter(markdownWithMeta);
-
   const title = data.title || slug;
   const description = data.preview || data.description || `Edition ${data.issue || ''} of the AWS GTM Strategy newsletter by Harry Blakemore.`;
   const url = `https://www.awscosellnewsletter.com/issues/${slug}`;
-
   return {
     title,
     description,
@@ -50,7 +48,6 @@ export default async function IssuePage({ params }) {
   const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(markdownWithMeta);
   const htmlContent = marked.parse(content);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -68,7 +65,6 @@ export default async function IssuePage({ params }) {
     datePublished: data.date || undefined,
     url: `https://www.awscosellnewsletter.com/issues/${slug}`,
   };
-
   return (
     <main className="max-w-4xl mx-auto px-6 pb-20">
       <script
@@ -80,10 +76,12 @@ export default async function IssuePage({ params }) {
           <span>←</span> Back to Archive
         </Link>
       </div>
-      <article
-        className="prose prose-slate lg:prose-xl max-w-none bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-100"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+      <article className="prose prose-slate lg:prose-xl max-w-none bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-100">
+        <div className="not-prose mb-10 pb-10 border-b border-slate-200">
+          <h1 className="text-4xl font-bold text-slate-900">{data.title}</h1>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </article>
     </main>
   );
 }
