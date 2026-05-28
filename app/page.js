@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const issues = [
+    { id: 'issue-25', title: 'Moving from Feature Matching to Intent Alignment', date: 'May 28, 2026', preview: 'If your GTM strategy is built around a static list of product features, you are optimizing for a conversation that isn\'t happening.' },
     { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The era of "Who you know" at AWS is being rapidly augmented by "What the machine knows about you."' },
     { id: 'issue-23', title: 'Redefining the Partner', date: 'May 1, 2026', preview: 'The rise of the Cloud Marketplace is effectively rezoning the entire partner neighborhood.' },
     { id: 'issue-22', title: 'GTM Launch and Leave Fallacy', date: 'April 17, 2026', preview: 'Most GTM strategies follow a linear path: Launch, Enable, and Hope. But strategy is static.' },
@@ -8,7 +9,7 @@ const issues = [
     { id: 'issue-20', title: 'Execution Platforms & Co-sell', date: 'March 20, 2026', preview: 'Most partnerships fail because of an execution bottleneck. We need to move co-sell out into the field.' },
     { id: 'issue-19', title: 'Concurrent Agreements', date: 'March 6, 2026', preview: 'A major update to Marketplace: support for concurrent private offers. This signals a shift in customer-centricity.' },
     { id: 'issue-18', title: 'Co-selling in the World of AI', date: 'Feb 20, 2026', preview: 'Amazon is committing $200bn to the AI arms race. This decision reshapes incentives for every partner.' },
-    { id: 'issue-17', title: 'Marketplaces: The New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn’t arrive because the old way is impossible—it arrives because the old way isn’t good enough.' },
+    { id: 'issue-17', title: 'Marketplaces: The New Frontier', date: 'Feb 6, 2026', preview: 'Innovation doesn't arrive because the old way is impossible—it arrives because the old way isn\'t good enough.' },
     { id: 'issue-16', title: 'Are you AWS Co-sell Ready?', date: 'Jan 23, 2026', preview: 'With marketplaces set to hit $85bn by 2028, the opportunity cost of not being optimized is higher than ever.' },
     { id: 'issue-15', title: 'ISV Outlook for 2026', date: 'Jan 9, 2026', preview: 'A look ahead: AI as an ecosystem, agentic procurement, and the shift toward solution-centric selling.' },
     { id: 'issue-14', title: 're:Cap from re:Invent', date: 'Dec 26, 2025', preview: 'The cloud is evolving from infrastructure to autonomous systems. Key takeaways for Marketplace sellers.' },
@@ -19,12 +20,12 @@ const issues = [
     { id: 'issue-09', title: 'The AWS Passport Programme', date: 'Oct 17, 2025', preview: 'A powerful lever for regional expansion. How to use Marketplace as a commercial landing zone.' },
     { id: 'issue-08', title: 'The $2,500 APN Fee', date: 'Oct 3, 2025', preview: 'Is it a logo tax or a growth hack? How to turn that fee into $3,500 in credits and a pipeline engine.' },
     { id: 'issue-07', title: 'APN–Marketplace Unification', date: 'Sept 19, 2025', preview: 'AWS is merging Partner Central and Marketplace. A mindset shift toward accessible, lean-team co-selling.' },
-    { id: 'issue-06', title: 'What is ACE?', date: 'Sept 5, 2025', preview: 'The golden rule: if it’s not in ACE, it doesn’t exist to AWS sellers. Stop being invisible to the sales engine.' },
-    { id: 'issue-05', title: 'AWS Seller Prime: Worth It?', date: 'Aug 22, 2025', preview: 'A breakdown for startups. Seller Prime is a lever, but only if you’re actually ready to pull it.' },
+    { id: 'issue-06', title: 'What is ACE?', date: 'Sept 5, 2025', preview: 'The golden rule: if it\'s not in ACE, it doesn\'t exist to AWS sellers. Stop being invisible to the sales engine.' },
+    { id: 'issue-05', title: 'AWS Seller Prime: Worth It?', date: 'Aug 22, 2025', preview: 'A breakdown for startups. Seller Prime is a lever, but only if you\'re actually ready to pull it.' },
     { id: 'issue-04', title: 'Stuck at Step 3', date: 'Aug 8, 2025', preview: 'The Better Together story is a filter, not a form. How to answer: "Why should AWS care?"' },
     { id: 'issue-03', title: 'Distribution: Friend or Foe?', date: 'July 25, 2025', preview: 'Distributors are the multipliers of co-sell scale. How they bridge the gap between ISVs and the engine.' },
-    { id: 'issue-02', title: 'Is Marketplace Worth the Effort?', date: 'July 11, 2025', preview: 'Marketplace delivers strategic value before the first transaction. It’s a co-sell accelerant.' },
-    { id: 'issue-01', title: 'What AWS Sellers Care About', date: 'June 27, 2025', preview: 'If you don’t show up with specifics, AWS sellers won’t engage. Here is what to say to co-own a deal.' }
+    { id: 'issue-02', title: 'Is Marketplace Worth the Effort?', date: 'July 11, 2025', preview: 'Marketplace delivers strategic value before the first transaction. It\'s a co-sell accelerant.' },
+    { id: 'issue-01', title: 'What AWS Sellers Care About', date: 'June 27, 2025', preview: 'If you don\'t show up with specifics, AWS sellers won\'t engage. Here is what to say to co-own a deal.' }
 ];
 
 export default function Home() {
