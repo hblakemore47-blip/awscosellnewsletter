@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const issues = [
+    { id: 'issue-27', title: 'The Private Offer Playbook', date: 'June 18, 2026', preview: 'Private Offers power enterprise Marketplace selling — but the operational complexity catches most ISVs off guard.' },
     { id: 'issue-26', title: 'Third-Party Integrators: The Smarter Way to List on Cloud Marketplace', date: 'June 11, 2026', preview: 'Getting listed on AWS Marketplace is far more involved than uploading a product description. Here\'s why no company should be doing it without a 3PI.' },
     { id: 'issue-25', title: 'Moving from Feature Matching to Intent Alignment', date: 'May 28, 2026', preview: 'If your GTM strategy is built around a static list of product features, you are optimizing for a conversation that isn\'t happening.' },
     { id: 'issue-24', title: 'The Algorithmic Matchmaker', date: 'May 14, 2026', preview: 'The era of "Who you know" at AWS is being rapidly augmented by "What the machine knows about you."' },
