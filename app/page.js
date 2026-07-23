@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const issues = [
-    { id: 'issue-29', title: "Who's Actually Accountable for AI Adoption?", date: 'July 23, 2026', preview: 'Enterprises are pouring millions into AI, but almost nobody can say who owns adoption — and that gap is the AWS partner ecosystem's next real opportunity.' },
+    { id: 'issue-29', title: "Who's Actually Accountable for AI Adoption?", date: 'July 23, 2026', preview: 'Enterprises are pouring millions into AI, but almost nobody can say who owns adoption — and that gap is the AWS partner ecosystem\'s next real opportunity.' },
     { id: 'issue-28', title: 'Can the Partner Development Manager Role Actually Scale?', date: 'July 9, 2026', preview: 'The PDM model works for a handful of strategic partners — but it was never built to scale to thousands, and the layoffs prove it.' },
     { id: 'issue-27', title: 'The Private Offer Playbook', date: 'June 25, 2026', preview: 'Private Offers power enterprise Marketplace selling — but the operational complexity catches most ISVs off guard.' },
     { id: 'issue-26', title: 'Third-Party Integrators: The Smarter Way to List on Cloud Marketplace', date: 'June 11, 2026', preview: 'Getting listed on AWS Marketplace is far more involved than uploading a product description. Here\'s why no company should be doing it without a 3PI.' },
