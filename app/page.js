@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const issues = [
+    { id: 'issue-35', title: 'AWS Marketplace: What Good Looks Like in 2026', date: 'October 15, 2026', preview: "A seven-point guide to what a well-built AWS Marketplace listing looks like in 2026, from four calls to action and express private offers to Buy with AWS, and why each element matters for co-sell." },
     { id: 'issue-34', title: "The Power of Three: When the Best Answer for the Customer Isn't Yours Alone", date: 'October 1, 2026', preview: "The best co-sell answer isn't always yours alone — start from the customer's outcome and a two-partner-plus-AWS motion gives the AM a bigger deal, lower risk and a better story." },
     { id: 'issue-33', title: 'The Outdated AWS Marketplace Endemic', date: 'September 17, 2026', preview: "Most ISVs don't have a Marketplace listing, they have a URL — and a listing frozen under old guidance quietly teaches AWS AMs to stop routing you deals." },
     { id: 'issue-32', title: 'Is AWS Partner Tier Progression Table Stakes?', date: 'September 3, 2026', preview: "Select-tier partners don't read as new anymore, they read as unvalidated — and if Advanced isn't a realistic 12-18 month climb, a distributor relationship might get you the same field visibility faster." },
