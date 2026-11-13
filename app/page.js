@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const issues = [
+    { id: 'issue-37', title: 'Your Marketplace Problem Starts at Discovery, Not at Close', date: 'November 12, 2026', preview: "Marketplace success is decided at discovery, not at close: put it into MEDDPICC paper process, get clear on why you're on it, and build champion AEs one account at a time." },
     { id: 'issue-36', title: 'The Co-Sell Bar Just Went Up. That’s Your Opening.', date: 'October 29, 2026', preview: "AWS now grades co-sell at both ends, with an AI-scored ACE front door and PRM measuring consumption at the back, so the winners will use AI to make every submission specific at volume." },
     { id: 'issue-35', title: 'AWS Marketplace: What Good Looks Like in 2026', date: 'October 15, 2026', preview: "A seven-point guide to what a well-built AWS Marketplace listing looks like in 2026, from four calls to action and express private offers to Buy with AWS, and why each element matters for co-sell." },
     { id: 'issue-34', title: "The Power of Three: When the Best Answer for the Customer Isn't Yours Alone", date: 'October 1, 2026', preview: "The best co-sell answer isn't always yours alone — start from the customer's outcome and a two-partner-plus-AWS motion gives the AM a bigger deal, lower risk and a better story." },
